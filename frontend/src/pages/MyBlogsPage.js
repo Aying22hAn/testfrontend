@@ -37,7 +37,7 @@ const MyBlogsPage = () => {
     if (!user) return;
     
     try {
-      const response = await fetch(`/api/blogs/user/${user.username}?page=${page}&limit=6`);
+      const response = await fetch(`http://TestALB-1043898100.ap-southeast-1.elb.amazonaws.com/api/blogs/user/${user.username}?page=${page}&limit=6`);
       const data = await response.json();
       setBlogs(data.blogs);
       setPagination(data.pagination);
@@ -60,7 +60,7 @@ const MyBlogsPage = () => {
     event.stopPropagation(); // Ngăn sự kiện click lan ra thẻ cha
     if (window.confirm('Bạn có chắc chắn muốn xóa blog này?')) {
       try {
-        const response = await fetch(`/api/blogs/${blogId}`, {
+        const response = await fetch(`http://TestALB-1043898100.ap-southeast-1.elb.amazonaws.com/api/blogs/${blogId}`, {
           method: 'DELETE'
         });
 

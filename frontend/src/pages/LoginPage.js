@@ -18,7 +18,7 @@ const LoginPage = () => {
     setError('');
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('http://TestALB-1043898100.ap-southeast-1.elb.amazonaws.com/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

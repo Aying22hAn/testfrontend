@@ -10,7 +10,7 @@ const useAuth = () => {
       
       if (storedUser) {
         try {
-          const response = await fetch(`/api/users/${storedUser.username}`);
+          const response = await fetch(`http://TestALB-1043898100.ap-southeast-1.elb.amazonaws.com/api/users/${storedUser.username}`);
           
           if (!response.ok) {
             // Nếu user không tồn tại trong database, xóa khỏi localStorage

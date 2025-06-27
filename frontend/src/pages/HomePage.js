@@ -25,7 +25,7 @@ const HomePage = () => {
 
   const fetchBlogs = async (page) => {
     try {
-      const response = await fetch(`/api/blogs?page=${page}&limit=6`);
+      const response = await fetch(`http://TestALB-1043898100.ap-southeast-1.elb.amazonaws.com/api/blogs?page=${page}&limit=6`);
       const data = await response.json();
       setBlogs(data.blogs);
       setPagination(data.pagination);

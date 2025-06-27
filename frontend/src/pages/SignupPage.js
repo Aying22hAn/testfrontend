@@ -24,7 +24,7 @@ const SignupPage = () => {
     }
 
     try {
-      const response = await fetch('/api/signup', {
+      const response = await fetch('http://TestALB-1043898100.ap-southeast-1.elb.amazonaws.com/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
